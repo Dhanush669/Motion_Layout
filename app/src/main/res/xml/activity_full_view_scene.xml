@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/photoo"
+               motion:framePosition="100"
+               android:alpha="0.5" />
+       </KeyFrameSet>
+        <OnSwipe
+            motion:dragDirection="dragDown"
+            />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/photoo"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="540dp" />
+        <Constraint
+            android:layout_height="1dp"
+            android:layout_width="1dp"
+            android:id="@+id/namee"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="450dp"
+            motion:layout_constraintStart_toEndOf="@+id/photoo"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
+        <Constraint
+            android:layout_height="40dp"
+            android:layout_width="120dp"
+            android:id="@+id/scrollView2"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="540dp"
+            motion:layout_constraintStart_toEndOf="@+id/photoo"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="0dp" />
+        <Constraint
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            motion:layout_editor_absoluteY="400dp"
+            motion:layout_constraintStart_toEndOf="@+id/scrollView2"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="540dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="0dp" />
+    </ConstraintSet>
+</MotionScene>
