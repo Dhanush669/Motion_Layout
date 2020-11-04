@@ -1,6 +1,7 @@
 package com.example.motionlayout;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,11 +34,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        //holder.postsimages.setImageResource(posts.get(position));
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         Glide.with(context).load(contents.get(position).getThumbnails()).centerCrop()
                 .into(holder.thumbnail);
-        holder.desc.setText(contents.get(position).getDesc().toString());
+        holder.desc.setText(contents.get(position).getDesc());
+        holder.thumbnail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context,FullView.class);
+                intent.putExtra("photo",contents.get(position).getThumbnails());
+                intent.putExtra("detailed",contents.get(position).getDesc());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

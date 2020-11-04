@@ -4,31 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Contentgetset {
-    List<Integer> thumbnails=new ArrayList<>();
-    List<String> desc=new ArrayList<>();
+    int thumbnails;
+    String desc;
 
     public Contentgetset() {
 
     }
 
-    public Contentgetset(List<Integer> thumbnails, List<String> desc) {
+    public Contentgetset(int thumbnails, String desc) {
         this.thumbnails = thumbnails;
         this.desc = desc;
     }
 
-    public List<Integer> getThumbnails() {
+    public int getThumbnails() {
         return thumbnails;
     }
 
-    public void setThumbnails(List<Integer> thumbnails) {
+    public void setThumbnails(int thumbnails) {
         this.thumbnails = thumbnails;
     }
 
-    public List<String> getDesc() {
+    public String getDesc() {
         return desc;
     }
 
-    public void setDesc(List<String> desc) {
+    public void setDesc(String desc) {
         this.desc = desc;
     }
 }
