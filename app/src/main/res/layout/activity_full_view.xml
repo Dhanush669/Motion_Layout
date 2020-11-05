@@ -13,7 +13,8 @@
         android:layout_height="300dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></ImageView>
+        app:layout_constraintTop_toTopOf="parent">
+    </ImageView>
 
     <TextView
         android:id="@+id/namee"
@@ -26,7 +27,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/photoo"></TextView>
+        app:layout_constraintTop_toBottomOf="@+id/photoo">
+    </TextView>
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -45,8 +47,10 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:textColor="#393838"
-            android:textSize="16sp"></TextView>
+            android:textSize="16sp">
+        </TextView>
     </ScrollView>
 
     <LinearLayout
