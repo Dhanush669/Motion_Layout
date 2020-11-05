@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 public class FullView extends AppCompatActivity {
-    ImageView photo;
+    ImageView photo,close;
     TextView detailed,name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,8 @@ public class FullView extends AppCompatActivity {
         photo=findViewById(R.id.photoo);
         name=findViewById(R.id.namee);
         detailed=findViewById(R.id.detailss);
-        Intent intent=getIntent();
+        close=findViewById(R.id.closee);
+        final Intent intent=getIntent();
         Glide.with(this).load(intent.getIntExtra("photo",R.drawable.dhoni)).centerCrop()
                 .into(photo);
         detailed.setText(intent.getStringExtra("detailed"));
@@ -38,5 +40,13 @@ public class FullView extends AppCompatActivity {
                 name.setText("Kamal Haasan \n      Actor");
                 break;
         }
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent1);
+                finish();
+            }
+        });
     }
 }
